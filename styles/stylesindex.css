@@ -1,6 +1,7 @@
 /* presetups */
 body {
     font-family: 'Bradley Hand', cursive;
+    color: white;
     background-image:url('https://img.freepik.com/premium-photo/theater-stage-red-curtains-3d-illustration_68747-327.jpg');
     background-repeat: no-repeat;
     background-attachment : fixed;
@@ -102,6 +103,29 @@ body {
     display: inline-block;
     padding: 10px;
   }
+
+/* gallery code */
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
 
 /* To keep the footer at the bottom */
 #footer { 

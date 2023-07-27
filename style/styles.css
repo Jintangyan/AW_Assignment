@@ -1,0 +1,107 @@
+
+.navbar {
+    background-color: #d5c7b0;
+  }
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 60px;
+  }
+  .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+  margin-right: -15px;
+  margin-left: -15px;
+  background-color: #d5c7b0;
+}
+  footer {
+    background-color: #d5c7b0;
+    padding: 25px;
+  }
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+     
+  }
+  /* Style the logo image */
+  .navbar-brand img {
+    max-height: 40px; 
+  }
+
+  /* Custom styles for the carousel and movieInfo */
+  .carousel-container {
+    display: fixed;
+    justify-content: space-between;
+    margin-right: 100px; /* Add a 100px right margin */
+    width: 250px; /* Set the width of the container */
+    margin-top: 60px;
+  }
+
+  .carousel-container .carousel,
+  .carousel-container .movieInfo {
+    flex: 1;
+    padding: 2px;
+  }
+
+  .carousel-image {
+    width: 100%; 
+    height: 400px;
+  }
+
+  .movieInfo {
+    display: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 100px; /* Add a 100px left margin */
+  }
+
+  .movieInfo p {
+    margin: 3px 0;
+    font-size: 15px;
+  }
+
+  /* Center carousel-container in jumbotron */
+  .jumbotron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px; 
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    margin-bottom: auto;
+  }
+   /* Style for the movie containers */
+.movie-container {
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 10px;
+  height:400px;
+  width:200px;
+    margin: 20px;
+  display: fixed;
+  flex-direction: column;
+  justify-content: space-between;
+  border-color: white;
+}
+
+/* Style for the movie name */
+ .movie-name {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Style for the movie rating */
+.movie-rating {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+.img-responsive{
+  max-height: 300px;
+  max-width: 160px;
+  display: flex;
+    }

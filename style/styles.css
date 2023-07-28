@@ -1,52 +1,49 @@
-
-        /* Index pagestyles here */
+       /*styles for index page */
 
         /* Center the image in homeContentContainer */
         .homeContentContainer {
-            display: flex;
-            justify-content: center;
-        }
+          display: flex;
+          justify-content: center;
+      }
 
-        /* Display gallery items horizontally */
-        .galleryContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 80px;
-            padding-right: 80px;
-        }
+      /* Display gallery items horizontally */
+      .galleryContainer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding-left: 80px;
+          padding-right: 80px;
+      }
 
-        /* Style for reviewContainer */
-        .reviewContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+      /* Style for reviewContainer */
+      .reviewContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 600px;
+          margin: 0 auto;
+      }
 
-        /* Style for reviewItem */
-        .reviewItem {
-            display: flex;
-            margin: 10px 0;
-        }
+      /* Style for reviewItem */
+      .reviewItem {
+          display: flex;
+          margin: 10px 0;
+      }
 
-        /* Style for reviewImage */
-        .reviewImage {
-            flex: 1;
-            max-width: 50%;
-        }
+      /* Style for reviewImage */
+      .reviewImage {
+          flex: 1;
+          max-width: 50%;
+      }
 
-        /* Style for reviewInfo */
-        .reviewInfo {
-            flex: 1;
-            padding: 0 10px;
-        }
+      /* Style for reviewInfo */
+      .reviewInfo {
+          flex: 1;
+          padding: 0 10px;
+      }
 
-  
-
-/* styles for movie page */
-.navbar {
+/*styles for movie page */
+  .navbar {
     background-color: #d5c7b0;
   }
   .navbar {
@@ -77,8 +74,8 @@
   .carousel-container {
     display: fixed;
     justify-content: space-between;
-    margin-right: 100px; /* Add a 100px right margin */
-    width: 250px; /* Set the width of the container */
+    margin-right: 100px; 
+    width: 250px; 
     margin-top: 60px;
   }
 
@@ -97,7 +94,7 @@
     display: fixed;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 100px; /* Add a 100px left margin */
+    margin-left: 100px; 
   }
 
   .movieInfo p {
@@ -121,9 +118,9 @@
   }
    /* Style for the movie containers */
 .movie-container {
-  background-color: rgba(0, 0, 0, 0.7); 
+  background-color: rgba(0, 0, 0, 0.7); /* 70% opaque black */
   padding: 10px;
-  height:400px;
+  height:400px; 
   width:200px;
     margin: 20px;
   display: fixed;
@@ -152,3 +149,15 @@
   max-width: 160px;
   display: flex;
     }
+
+
+/*styles for details page */
+.details.galleryContainer .col-sm-3 {
+  margin-bottom: 50px; 
+}
+
+.details.reviewInfo {
+  border-top: 1px solid #ccc; 
+  margin-top: 20px; 
+  padding-top: 10px; 
+}

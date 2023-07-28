@@ -46,19 +46,19 @@ function generateCarouselSlides($movieData) {
         echo ' active';
       }
       echo '">';
-      echo '<img src="data:image/jpeg;base64,' . base64_encode($movie["image"]) . '" alt="' . $movie["mname"] . '" class="carousel-image">';
+      <img src="data:image/jpeg;base64,' . base64_encode($movie["image"]) . '" alt="' . $movie["mname"] . '" class="carousel-image">
       echo '</div>';
     }
 
     echo '</div>';
-    echo '<a class="left carousel-control" href="#movieCarousel" data-slide="prev">';
-    echo '<span class="glyphicon glyphicon-chevron-left"></span>';
-    echo '<span class="sr-only">Previous</span>';
-    echo '</a>';
-    echo '<a class="right carousel-control" href="#movieCarousel" data-slide="next">';
-    echo '<span class="glyphicon glyphicon-chevron-right"></span>';
-    echo '<span class="sr-only">Next</span>';
-    echo '</a>';
+    echo '<a class="left carousel-control" href="#movieCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+        </a>';
+    echo '<a class="right carousel-control" href="#movieCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+         <span class="sr-only">Next</span>
+        </a>';
     echo '</div>';
 
     return $activeIndex;

@@ -1,3 +1,5 @@
+
+
        /*styles for index page */
 
         /* Center the image in homeContentContainer */
@@ -74,8 +76,8 @@
   .carousel-container {
     display: fixed;
     justify-content: space-between;
-    margin-right: 100px; 
-    width: 250px; 
+    margin-right: 100px; /* Add a 100px right margin */
+    width: 250px; /* Set the width of the container */
     margin-top: 60px;
   }
 
@@ -94,7 +96,7 @@
     display: fixed;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 100px; 
+    margin-left: 100px; /* Add a 100px left margin */
   }
 
   .movieInfo p {
@@ -107,7 +109,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px; 
+    height: 450px; /* Set the height of the jumbotron */
   }
   .header {
     position: fixed;
@@ -120,7 +122,7 @@
 .movie-container {
   background-color: rgba(0, 0, 0, 0.7); /* 70% opaque black */
   padding: 10px;
-  height:400px; 
+  height:400px; /* Set the desired container height */
   width:200px;
     margin: 20px;
   display: fixed;
@@ -157,7 +159,18 @@
 }
 
 .details.reviewInfo {
-  border-top: 1px solid #ccc; 
-  margin-top: 20px; 
-  padding-top: 10px; 
+  border-top: 1px solid #ccc; /* Add a top border */
+  margin-top: 20px; /* Add spacing between reviewInfos */
+  padding-top: 10px; /* Add padding for better visual separation */
+}
+
+
+/*style for login page*/
+.Login_container{
+          padding: 100px;
+      }
+
+/*style for sign up page*/
+.signup_container{
+   padding: 100px;
 }

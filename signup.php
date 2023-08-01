@@ -11,7 +11,7 @@
     
 <div class="signup_container">
   <h2>Sign Up</h2>
-  <form method = "POST" action="signUp_process.php">
+  <form method = "POST" action="process/signUp_process.php">
     <div class="form-group">
       <label for="fname">First Name:</label>
       <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
@@ -35,6 +35,6 @@
     <button type="submit" name="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
-
+<?php include "pagesParts/footer.php"; ?>
 </body>
 </html>

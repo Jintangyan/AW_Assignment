@@ -2,8 +2,8 @@
   <div class="row">
     <!--Logo -->
     <div class="col-sm-4">
-      <a href="#">
-        <img src="graphics/logo.png" alt="Logo" style="max-height: 80px;">
+      <a href="index.php">
+        <img src="graphics/logo1.png" alt="Logo" style="max-height: 90px;">
          
       </a>
     </div>
@@ -27,7 +27,7 @@
       </a>
     </div>
 
-    <!--Contact Us Link -->
+    <!Contact Us Link -->
     <div class="col-sm-4">
       <a href="#">Contact Us</a>
     </div>

@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php include "pagesParts/header.php"; ?>
- <?php include "login_process.php"; ?>
+ <?php include "process/login_process.php"; ?>
   
 <div class="Login_container">
     <h2>Log In</h2>
@@ -22,7 +22,7 @@
         <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
       </div>
       <button type="submit" class="btn btn-default">Log In</button>
-      <button type="button" class="btn btn-default">Sign Up</button>
+      <a href="signup.php" class="btn btn-default">Sign Up</a>
     </form>
   </div>
 

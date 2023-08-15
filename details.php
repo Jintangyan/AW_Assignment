@@ -1,3 +1,8 @@
+<?php   
+session_start();
+$selectedMovieID = isset($_SESSION['selectedMovieID']) ? $_SESSION['selectedMovieID'] : null;
+$selectedMname = isset($_SESSION['selectedMname']) ? $_SESSION['selectedMname'] : null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +10,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <?php include "pagesParts/head.php"; ?>
+    
 </head>
 <body>
     <?php include "pagesParts/header.php"; ?>
     <?php include "db_connection.php"; ?> 
-
+    <br><br><br>
     <main class="homeContent">
         <div class="homeContentContainer">
-            <img src="graphics/landscape/breakfast-at-tiffanys.jpg" alt="1960s" class="homeImage">
+           <img src="graphics/landscape/'. strtolower(str_replace(' ', '-', $selectedMname)) .'.jpg" alt="'. $selectedMname .'" class="homeImage">
         </div>
     </main>
 <?php
-$query = "SELECT * FROM movie WHERE movieID = 7";
-$result = mysqli_query($conn, $query);
+$stmt = $conn->prepare("SELECT * FROM movie WHERE movieID = ?");
+$stmt->bind_param("i", $selectedMovieID); // "i" indicates the variable type is an integer
+$stmt->execute();
+$result = $stmt->get_result();
 
 // Check if there is exactly one row returned from the query
 if (mysqli_num_rows($result) === 1) {
@@ -47,15 +55,19 @@ if (mysqli_num_rows($result) === 1) {
     <div class="reviewContainer">
         <h3 >Reviews</h3>
         <?php
-       $query = "SELECT review.*, movie.image, movie.rating, account.fname FROM review 
-          JOIN movie ON review.movieID = movie.movieID
-          JOIN account ON review.accountID = account.accountID
-          WHERE movie.movieID = 7";
-        $result = mysqli_query($conn, $query);
+     $stmt = $conn->prepare("SELECT review.*, movie.image, movie.rating, account.fname FROM review 
+                        JOIN movie ON review.movieID = movie.movieID
+                        JOIN account ON review.accountID = account.accountID
+                        WHERE movie.movieID = ?");
+$stmt->bind_param("i", $selectedMovieID);
+$stmt->execute();
+$result = $stmt->get_result();
 
         if (mysqli_num_rows($result) === 0) {
             echo '<p>No reviews found.</p>';
-        } else {
+            echo '<p>' . $selectedMovieID . '</p>'; 
+        }
+        else {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="reviewInfo">';
                 if (!empty($row["rating"])) {
@@ -79,7 +91,6 @@ if (mysqli_num_rows($result) === 1) {
         }
         ?>
     </div>
-
 
     <?php include "pagesParts/footer.php"; ?>
 </body>

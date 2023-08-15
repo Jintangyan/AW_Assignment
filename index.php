@@ -1,10 +1,20 @@
+<?php session_start();
+
+if(isset($_POST['movieID']) && isset($_POST['mname'])) {
+    $_SESSION['selectedMovieID'] = $_POST['movieID'];
+    $_SESSION['selectedMname'] = $_POST['mname'];
+    echo 'Session updated successfully.';
+} else {
+    echo 'Error updating session.';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+<head>   
     <title>Reviews of 60s</title>
     <?php include "pagesParts/head.php"; ?>
     
+
 </head>
 <body>
     <?php include "pagesParts/header.php"; ?>
@@ -13,6 +23,7 @@
     <main class="homeContent">
         <div class="homeContentContainer">
             <img src="graphics/landscape/1960s.png" alt="1960s" class="homeImage">
+            
         </div>
     </main>
 
@@ -26,10 +37,13 @@
            echo '
               <div class="col-sm-3">
                 <div class="movie-container"> 
+                <a href="details.php?movieID=' . $row["movieID"] . '" onclick="updateSession(' . $row["movieID"] . ', \'' . $row["mname"] . '\')">
                   <img src="data:image/jpeg;base64,' . base64_encode($row["image"]) . '" class="img-responsive" alt="Image">
+                </a>;
                   <p class="movie-name">' . $row["mname"] . '</p>
                   <p class="movie-rating">Rating: ' . $row["rating"] . '</p>
-                </div>
+                   <button style="float:right;background-color: white;" class="btn btn-info btn-xs add_movie" mid="movieID" id="' . $row["movieID"] . '" onclick="addFav(' . $row["movieID"] . ', ' . $_SESSION['accountID'] . ')"><i class="fas fa-heart" style="color: red;"></i></button> 
+              </div>
               </div>
             
             ';
@@ -40,7 +54,7 @@
     <div class="reviewContainer">
         <h3 >Top Reviews</h3>
         <?php
-        $query = "SELECT review.*, movie.image, movie.rating, account.fname FROM review 
+        $query = "SELECT review.*, movie.image, movie.mname, movie.rating, account.fname FROM review 
                   JOIN movie ON review.movieID = movie.movieID 
                   JOIN account ON review.accountID = account.accountID";
         $result = mysqli_query($conn, $query);
@@ -52,7 +66,10 @@
                 echo '<div class="reviewItem">';
                 echo '<div class="reviewImage">';
                 if (!empty($row["image"])) {
+                   echo '<a href="details.php?movieID=' . $row["movieID"] . '" onclick="updateSession(' . $row["movieID"] . ', \'' . $row["mname"] . '\')">';
                     echo '<img src="data:image/jpeg;base64,' . base64_encode($row["image"]) . '" class="img-responsive" alt="Image">';
+                    echo '</a>';
+
                 } else {
                     echo '<p>No image available</p>';
                 }

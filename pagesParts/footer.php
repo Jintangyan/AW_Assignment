@@ -27,7 +27,7 @@
       </a>
     </div>
 
-    <!Contact Us Link -->
+    <!-- Contact Us Link -->
     <div class="col-sm-4">
       <a href="#">Contact Us</a>
     </div>

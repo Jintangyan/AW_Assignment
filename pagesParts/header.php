@@ -1,3 +1,13 @@
+<?php
+
+function displayLoginOption() {
+    if (isset($_SESSION['accountID']) && isset($_SESSION['userName'])) {
+        return $_SESSION['userName'] . "/SignOut";
+    } else {
+        return "Login/SignUp";
+    }
+}
+?>
 <header class="header">
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -13,12 +23,11 @@
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
         <li ><a href="movie.php">Movie</a></li>
-        <li><a href="#">Account</a></li>
           <li><a href="details.php">Sample of Detail</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+        <li><a href="<?php echo (isset($_SESSION['accountID']) && isset($_SESSION['userName'])) ? 'account.php' : 'login.php'; ?>"><span class="glyphicon glyphicon-log-in"></span> <?php echo displayLoginOption(); ?></a></li>
+    </ul>
     </div>
   </div>
 </nav>

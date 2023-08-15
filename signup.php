@@ -11,6 +11,7 @@
     
 <div class="signup_container">
   <h2>Sign Up</h2>
+    <p>Already have an account? Click Login!</p>
   <form method = "POST" action="process/signUp_process.php">
     <div class="form-group">
       <label for="fname">First Name:</label>
@@ -33,6 +34,10 @@
       <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
     </div>
     <button type="submit" name="submit" class="btn btn-default">Submit</button>
+      <a href="login.php"  class="btn btn-default" style="color: red;">Login</a> 
+      <br>
+       
+      
   </form>
 </div>
 <?php include "pagesParts/footer.php"; ?>

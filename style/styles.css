@@ -1,5 +1,3 @@
-
-
        /*styles for index page */
 
         /* Center the image in homeContentContainer */
@@ -13,17 +11,18 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding-left: 80px;
-            padding-right: 80px;
+            padding-left: 50px;
+            padding-right: 50px;
         }
 
         /* Style for reviewContainer */
-        .reviewContainer {
+         .guessContainer {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 600px;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 50px;
+            padding-right: 50px;
+             margin-bottom: 15px;
         }
 
         /* Style for reviewItem */
@@ -75,10 +74,11 @@
     /* Custom styles for the carousel and movieInfo */
     .carousel-container {
       display: fixed;
+         width: 1100px;
       justify-content: space-between;
-      margin-right: 100px; /* Add a 100px right margin */
-      width: 250px; /* Set the width of the container */
-      margin-top: 60px;
+
+      width: 1100px; /* Set the width of the container */
+
     }
 
     .carousel-container .carousel,
@@ -88,20 +88,16 @@
     }
 
     .carousel-image {
-      width: 100%; 
+      width: 25%; 
       height: 400px;
+        float: left; 
     }
 
     .movieInfo {
-      display: fixed;
+      display: f;
       flex-direction: column;
       justify-content: space-between;
       margin-left: 100px; /* Add a 100px left margin */
-    }
-
-    .movieInfo p {
-      margin: 3px 0;
-      font-size: 15px;
     }
 
     /* Center carousel-container in jumbotron */
@@ -120,51 +116,63 @@
     }
      /* Style for the movie containers */
   .movie-container {
-    background-color: rgba(0, 0, 0, 0.7); /* 70% opaque black */
+    background-color: rgb(213 199 176 / 61%);
     padding: 10px;
-    height:400px; /* Set the desired container height */
-    width:200px;
-      margin: 20px;
+    height: 430px;
+    width: 200px;
+    margin-top: 10px;
     display: fixed;
     flex-direction: column;
     justify-content: space-between;
-    border-color: white;
-  }
+    border-color: #100a0a;
+}
+
+.movie-container-p {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+}
 
   /* Style for the movie name */
-   .movie-name {
-    color: white;
-    font-size: 18px;
+ .movie-name {
+    color: black;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
-  }
+}
 
   /* Style for the movie rating */
   .movie-rating {
-    color: white;
-    font-size: 16px;
+    color: balck;
+    font-size: 14px;
     text-align: center;
   }
 .img-responsive{
     max-height: 300px;
-    max-width: 160px;
+    max-width: 180px;
     display: flex;
       }
 
 
 /*styles for details page */
-.details.galleryContainer .col-sm-3 {
-    margin-bottom: 50px; 
+.galleryContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 200px;
+    padding-right: 200px;
 }
+
 
 .details.reviewInfo {
     border-top: 1px solid #ccc; /* Add a top border */
     margin-top: 20px; /* Add spacing between reviewInfos */
     padding-top: 10px; /* Add padding for better visual separation */
 }
-
-
+.homeContentContainer {
+    margin: 10px;
+}
 /*style for login page*/
  .Login_container{
             padding: 100px;
@@ -173,3 +181,218 @@
 .signup_container{
      padding: 100px;
 }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 550px;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        height: 450px;
+        }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+
+/*style for account page*/ 
+        body {
+            margin-top: 70px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .wrapper {
+            display: flex;
+        }
+        .main {
+            flex: 2;
+        }
+        .sidebar {
+            flex: 1;
+        }
+        .account-details, .reviews, .favourites {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .review, .favourite-item {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+        .review-content, .favourite-content {
+            flex: 1;
+            margin-left: 10px;
+        }
+        .review-actions {
+            text-align: right;
+        }
+        .labels, .inputs {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .labels {
+            width: 30%;
+            text-align: right;
+            margin-right: 10px;
+            line-height: 2.5em;
+        }
+        .inputs {
+            width: 60%;
+            line-height: 2.5em;
+        }
+        
+
+/*STYLE for review form*/
+        .review-form {
+            display: block;
+            box-sizing: border-box;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #a6a6a6;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .review-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .movie-info {
+            flex-direction: column;
+            align-items: center;
+        }
+        .review-info {
+            margin-top: 15px;
+        }
+        .rating {
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 6px;
+        }
+        .section-heading {
+            margin-right: 10px;
+        }
+
+        .review {
+            width: 100%;
+            height: 150px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #a6a6a6;
+            padding: 10px;
+            resize: none;
+        }
+        .review-submit {
+            background-color: #ffffff;
+            bottom: 2px;
+            margin-top: 10px;
+            
+            padding: 0 10px 10px;
+            position: inherit;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        .horizontal-line {
+            width: 100%;
+            height: 1px;
+            background-color: #a6a6a6;
+            margin-bottom: 15px;
+        }
+        .star-rating {
+            line-height:32px;
+            font-size:1.25em;   
+        }
+        .star-rating .fa-star{color: yellow;}
+
+/* style of search page*/
+        .search-container {
+            width: 80%;
+            margin: 80px auto 0 auto;
+        }
+
+        .search {
+            width: 100%;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            border-bottom: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        .hints {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .search-result {
+            width: 100%;
+        }
+
+        .result-item {
+            width: 100%;
+            padding: 10px 0;
+             border-bottom: 1px solid black; 
+        }
+
+        .movie-item {
+            display: flex;
+            justify-content: space-between;
+           
+        }
+
+        .poster {
+            width: 100px;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .poster img {
+            width: 100%;
+            height: auto;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column; 
+            justify-content: space-between;
+            width: calc(100% - 105px);
+        }
+
+        .info > div {
+            margin-right: 5px;
+        }

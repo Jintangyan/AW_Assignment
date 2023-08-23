@@ -3,7 +3,7 @@ session_start();
 
 include "../db_connection.php";
 
-$email = trim($_POST["email"]); // Trim whitespace
+$email = trim($_POST["email"]); 
 $password = trim($_POST["password"]); 
 
 if (!$conn) {

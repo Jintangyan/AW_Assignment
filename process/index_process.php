@@ -1,6 +1,7 @@
 <?php
-session_start(); 
-include "db_connection.php";
+// Ensure that the database connection is available in this script
+define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/9092_1_9180_2_Website_Prototypel/');
+include ROOT_PATH . 'db_connection.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -11,11 +12,8 @@ if (isset($_POST['action'])) {
         fetch_top_reviews($conn);
     } elseif ($action == 'add_favorite') {
         add_favorite($conn);
-    } elseif ($action == 'update_session') {
-        updateSession($conn);
-    }
+    } 
 }
-
 
 function fetch_top_movies($conn) {
     $query = "SELECT * FROM movie ORDER BY rating DESC LIMIT 5";
@@ -27,42 +25,22 @@ function fetch_top_movies($conn) {
     echo json_encode($movies);
 }
 
-function fetch_top_reviews($conn) {
-    $query = "SELECT review.*, movie.image, movie.rating, account.fname FROM review 
-              JOIN movie ON review.movieID = movie.movieID 
-              JOIN account ON review.accountID = account.accountID";
-    $result = mysqli_query($conn, $query);
-    $reviews = [];
-    if (mysqli_num_rows($result) !== 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $reviews[] = $row;
-        }
-    }
-    echo json_encode($reviews);
-}
-
 function add_favorite($conn) {
-    $movieID = $_POST['movieID'];
-    $accountID = $_POST['accountID'];
+    $paramMovieID = $_POST['movieID'];
+    $paramAccountID = $_POST['accountID'];
 
     $query = "INSERT INTO favlist (movieID, accountID) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("ii", $movieID, $accountID);
-    $stmt->execute();
-
-    echo 'Success';
-}
-
-function updateSession($conn) {
-    if(isset($_POST['movieID']) && isset($_POST['mname'])) {
-        $_SESSION['selectedMovieID'] = $_POST['movieID'];
-        $_SESSION['selectedMname'] = $_POST['mname'];
-        echo 'Session updated successfully.';
-    } else {
-        echo 'Error updating session.';
+    if (!$stmt) {
+        echo json_encode(['status' => 'error', 'message' => $conn->error]);
+        return;
     }
+    $stmt->bind_param("ii", $paramMovieID, $paramAccountID);
+    if (!$stmt->execute()) {
+        echo json_encode(['status' => 'error', 'message' => $stmt->error]);
+        return;
+    }
+    echo json_encode(['status' => 'success', 'message' => 'Movie Added Successfully']);
 }
 
-
-    
 ?>

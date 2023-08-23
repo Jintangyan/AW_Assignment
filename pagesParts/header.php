@@ -23,7 +23,7 @@ function displayLoginOption() {
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
         <li ><a href="movie.php">Movie</a></li>
-          <li><a href="details.php">Sample of Detail</a></li>
+          <li><a href="search.php">Search</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo (isset($_SESSION['accountID']) && isset($_SESSION['userName'])) ? 'account.php' : 'login.php'; ?>"><span class="glyphicon glyphicon-log-in"></span> <?php echo displayLoginOption(); ?></a></li>
